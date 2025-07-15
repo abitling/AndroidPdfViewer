@@ -11,6 +11,17 @@ android {
     }
 }
 
+publishing {
+    publications {
+        release(MavenPublication) {
+            from components.release
+            groupId = 'com.github.abitling'  // Your GitHub username
+            artifactId = 'AndroidPdfViewer'          // Your repo name
+            version = '1.0.0'                // Tag you will use
+        }
+    }
+}
+
 dependencies {
     implementation 'androidx.core:core:1.12.0'
     api 'io.legere:pdfiumandroid:1.0.19'
